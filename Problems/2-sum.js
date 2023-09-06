@@ -1,7 +1,6 @@
 function twoSum(list , target){
     const combinations = [];
     let [i , j] = [0,list.length-1];
-    for(let i in list){
     while(i < j){
         if(list[i] + list[j] === target){
             combinations.push(`${list[i]},${list[j]}`);
@@ -13,7 +12,6 @@ function twoSum(list , target){
         }
     }
     return [...new Set(combinations)];
-}
 }
 
 
