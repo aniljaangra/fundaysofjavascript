@@ -1,12 +1,19 @@
 
 Data Structures and Algorithms
 ReactJS*
+
 Web security issues (XSS, XSRF)
+
 Problem solving in JavaScript
+
 Classical vs. prototypal inheritance
+
 LLD
+
 HTML/CSS, CSS preprocessors  (SCSS, LESS)
+
 ES6 + ES7 features
+
 Web performance optimization
 Browser / DOM events & event handling
 PWA features
