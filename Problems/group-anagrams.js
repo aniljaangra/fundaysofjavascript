@@ -41,3 +41,34 @@ const groupAnagrams = function(strs) {
 };
 
 console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
+
+//  implementation 2
+var groupAnagram = function(strs) {
+    let res = {};
+    for (let str of strs) {
+        let count = new Array(26).fill(0);
+        for (let char of str) count[char.charCodeAt()-97]++;
+        let key = count.join("#");
+        res[key] ? res[key].push(str) : res[key] = [str];
+    }
+    return Object.values(res);
+};
+
+
+var isValidAnagram = function(s, t) {
+    if (s.length != t.length) return false;
+
+    t = t.toLowerCase();
+    s = s.toLowerCase();
+
+    let resT=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+    let resS=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+    for (let i=0; i<t.length; i++)
+        resT[t.charCodeAt(i)-97] += 1;
+
+    for (let i=0; i<t.length; i++)
+        resS[s.charCodeAt(i)-97] += 1;
+
+    return JSON.stringify(resT) === JSON.stringify(resS);
+};
